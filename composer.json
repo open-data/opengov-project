@@ -78,7 +78,8 @@
         "webflo/drupal-core-require-dev": "^8.7.0"
     },
     "conflict": {
-        "drupal/drupal": "*"
+        "drupal/drupal": "*",
+        "symfony/http-foundation": "3.4.24"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -93,16 +94,16 @@
     },
     "scripts": {
         "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+            "OpenGovProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+            "OpenGovProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "OpenGovProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "OpenGovProject\\composer\\ScriptHandler::createRequiredFiles"
         ]
     },
     "extra": {

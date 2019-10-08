@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \DrupalProject\composer\ScriptHandler.
+ * Contains \OpenGovProject\composer\ScriptHandler.
  */
 
-namespace DrupalProject\composer;
+namespace OpenGovProject\composer;
 
 use Composer\Script\Event;
 use Composer\Semver\Comparator;
