@@ -61,7 +61,7 @@
         }
     ],
     "require": {
-        "php": ">=7.0.8",
+        "php": ">=7.1",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
@@ -111,12 +111,17 @@
             "drupal/core": "-p2"
         },
         "installer-paths": {
-            "html/core": ["type:drupal-core"],
-            "html/libraries/{$name}": ["type:drupal-library"],
-            "html/modules/contrib/{$name}": ["type:drupal-module"],
-            "html/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "html/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+            "html/core": [ "type:drupal-core" ],
+            "html/libraries/{$name}": [
+                "type:drupal-library",
+                "type:npm-asset",
+                "type:bower-asset"
+            ],
+            "html/modules/contrib/{$name}": [ "type:drupal-module" ],
+            "html/profiles/{$name}": [ "type:drupal-profile" ],
+            "html/themes/custom/{$name}": [ "opengov/gcweb" ],
+            "html/themes/contrib/{$name}": [ "type:drupal-theme" ],
+            "drush/Commands/{$name}": [ "type:drupal-drush" ]
         },
         "drupal-scaffold": {
             "initial": {
