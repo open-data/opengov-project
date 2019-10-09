@@ -27,7 +27,7 @@ before_install:
 
 install:
   - composer --verbose validate
-  - composer --verbose install --prefer-dist --no-interaction
+  - php -d memory_limit=-1 composer --verbose install --prefer-dist --no-interaction
 
 script:
   - if [[ $RELEASE = dev ]]; then composer --verbose remove --no-update drupal/console; fi;
