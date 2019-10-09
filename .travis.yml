@@ -1,6 +1,5 @@
 langugage: php
-dist: trusty
-sudo: required
+sudo: false 
 
 php:
   - 7.2
