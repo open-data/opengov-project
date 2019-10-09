@@ -1,11 +1,14 @@
-language: php
 dist: trusty
-sudo: false
+sudo: required
+
+langugage: php
 
 php:
-  - 7.1
   - 7.2
-  - 7.3
+
+services:
+  - postgres
+  - memcached
 
 env:
   global:
