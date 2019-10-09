@@ -1,7 +1,6 @@
+langugage: php
 dist: trusty
 sudo: required
-
-langugage: php
 
 php:
   - 7.2
@@ -21,13 +20,14 @@ env:
 
 before_install:
   - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - COMPOSER_MEMORY_LIMIT=-1
   - phpenv config-rm xdebug.ini
   - composer --verbose self-update --$COMPOSER_CHANNEL
   - composer --version
 
 install:
   - composer --verbose validate
-  - composer --verbose install
+  - composer --verbose install --prefer-dist --no-interaction
 
 script:
   - if [[ $RELEASE = dev ]]; then composer --verbose remove --no-update drupal/console; fi;
