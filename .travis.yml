@@ -14,7 +14,7 @@ env:
     - RELEASE=stable COMPOSER_CHANNEL=snapshot
 
 services:
-  - postgres
+  - docker
   - memcached
 
 before_install:
@@ -39,9 +39,6 @@ script:
   - if [[ $RELEASE = dev ]]; then composer --verbose require --no-update drupal/core:8.8.x-dev webflo/drupal-core-require-dev:8.8.x-dev; fi;
   - if [[ $RELEASE = dev ]]; then composer --verbose update; fi;
   - cd $TRAVIS_BUILD_DIR/html
-  # rebuild cache
-  - ./../vendor/bin/drush cr
-  - ./../vendor/bin/drush cr discovery
   # install site
   - ./../vendor/bin/drush site-install --verbose --yes --db-url=sqlite://tmp/site.sqlite
   - ./../vendor/bin/drush runserver $SIMPLETEST_BASE_URL &
