@@ -42,6 +42,7 @@ script:
 
   - cd $TRAVIS_BUILD_DIR/html
   # install site
+  # https://www.drupal.org/project/redirect/issues/3082734
   # - ./../vendor/bin/drush site-install --verbose --yes --db-url=sqlite://tmp/site.sqlite
   # check response
   # - ./../vendor/bin/drush runserver $SIMPLETEST_BASE_URL &
