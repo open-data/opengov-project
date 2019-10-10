@@ -1,12 +1,8 @@
 langugage: php
-sudo: false 
+sudo: required 
 
 php:
   - 7.2
-
-services:
-  - postgres
-  - memcached
 
 env:
   global:
@@ -18,7 +14,11 @@ env:
     - RELEASE=dev COMPOSER_CHANNEL=stable
     - RELEASE=stable COMPOSER_CHANNEL=snapshot
 
+services:
+  - memcached
+
 before_install:
+  - sudo systemctl | grep memcache
   - echo "memory_limit=2G" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - phpenv config-rm xdebug.ini
