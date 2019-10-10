@@ -1,5 +1,4 @@
 langugage: php
-sudo: required 
 
 php:
   - 7.2
@@ -18,10 +17,15 @@ services:
   - memcached
 
 before_install:
-  - sudo systemctl | grep memcache
+  # add extension for memcache
+  - echo "extension = memcached.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  # increase memorry limit
   - echo "memory_limit=2G" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  # disable xdebug
   - phpenv config-rm xdebug.ini
+  # update composer
+  - composer clear-cache
   - composer --verbose self-update --$COMPOSER_CHANNEL
   - composer --version
 
