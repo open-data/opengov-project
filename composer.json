@@ -3,6 +3,8 @@
     "description": "Project template for Open Government project with composer",
     "type": "project",
     "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "repositories": [
         {
             "type": "composer",
@@ -81,8 +83,6 @@
         "drupal/drupal": "*",
         "symfony/http-foundation": "3.4.24"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "config": {
         "sort-packages": true
     },
@@ -107,10 +107,10 @@
         ]
     },
     "extra": {
-        "composer-exit-on-patch-failure": false,
-        "patchLevel": {
-            "drupal/core": "-p2"
-        },
+        "installer-types": [
+           "bower-asset",
+           "npm-asset"
+        ],
         "installer-paths": {
             "html/core": [ "type:drupal-core" ],
             "html/libraries/{$name}": [
@@ -123,6 +123,11 @@
             "html/themes/custom/{$name}": [ "opengov/gcweb" ],
             "html/themes/contrib/{$name}": [ "type:drupal-theme" ],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "enable-patching": true,
+        "composer-exit-on-patch-failure": false,
+        "patchLevel": {
+            "drupal/core": "-p2"
         },
         "drupal-scaffold": {
             "initial": {
