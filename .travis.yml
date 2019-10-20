@@ -10,12 +10,17 @@ env:
     - COMPOSER_MEMORY_LIMIT=-1
   matrix:
     - RELEASE=stable COMPOSER_CHANNEL=stable
-    allow_failures:
-      - RELEASE=dev COMPOSER_CHANNEL=stable
-      - RELEASE=stable COMPOSER_CHANNEL=snapshot
+    - RELEASE=dev COMPOSER_CHANNEL=stable
+    - RELEASE=stable COMPOSER_CHANNEL=snapshot
 
 services:
   - memcached
+
+jobs: 
+  fast_finish: true
+  allow_failures:
+    - php: 7.2
+      env: RELEASE=dev COMPOSER_CHANNEL=stable
 
 before_install:
   # add extension for memcache
