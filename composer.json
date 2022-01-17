@@ -133,6 +133,6 @@
             "locations": {
                 "web-root": "html/"
             }
-        },
+        }
     }
 }
