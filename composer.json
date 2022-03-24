@@ -57,7 +57,7 @@
         "symfony/event-dispatcher": "4.3.4 as 3.4.99",
         "vlucas/phpdotenv": "^5.4.1",
         "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3",
+        "symfony/filesystem": "^6.0.6",
         "wikimedia/composer-merge-plugin": "2.0.1",
         "zaporylie/composer-drupal-optimizations": "^1.2.0"
     },
