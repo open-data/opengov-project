@@ -52,7 +52,7 @@
         "drupal/core-composer-scaffold": "^8.8.0",
         "drupal/console": "^1.9.8",
         "drupal/core": "^8.9.0",
-        "drush/drush": "^11.0.7",
+        "drush/drush": "^10.0.0",
         "opengov/og": "dev-master",
         "symfony/event-dispatcher": "4.3.4 as 3.4.99",
         "vlucas/phpdotenv": "^5.4.1",
