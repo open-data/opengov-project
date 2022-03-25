@@ -70,20 +70,6 @@
     "config": {
         "sort-packages": true
     },
-    "scripts": {
-        "pre-install-cmd": [
-            "OpenGovProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "OpenGovProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "post-install-cmd": [
-            "OpenGovProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "OpenGovProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
-    },
     "extra": {
         "installer-types": [
            "bower-asset",
