@@ -46,26 +46,21 @@
         }
     ],
     "require": {
-        "php": ">=7.1",
-        "composer/installers": "^1.2",
-        "cweagans/composer-patches": "^1.6.5",
-        "drupal/core-composer-scaffold": "^8.8.0",
-        "drupal/console": "^1.9.8",
-        "drupal/core": "^8.9.0",
-        "drush/drush": "^10.0.0",
+        "php": ">=8",
+        "composer/installers": "^2.0",
+        "cweagans/composer-patches": "^1.7.0",
+        "drupal/core-composer-scaffold": "^11",
+        "drupal/core": "^11",
+        "drush/drush": "^12",
         "opengov/og": "dev-master",
-        "symfony/event-dispatcher": "4.3.4 as 3.4.99",
         "webflo/drupal-finder": "^1.0.0",
         "wikimedia/composer-merge-plugin": "2.0.1",
-        "zaporylie/composer-drupal-optimizations": "^1.2.0"
     },
     "require-dev": {
-        "drupal/core-dev": "^8.9"
+        "drupal/core-dev": "^11"
     },
     "conflict": {
-        "drupal/drupal": "*",
-        "symfony/http-foundation": "3.4.35",
-        "drush/drush": "<8.1.10"
+        "drupal/drupal": "*"
     },
     "config": {
         "sort-packages": true
@@ -97,11 +92,6 @@
             "locations": {
                 "web-root": "html/"
             }
-        },
-        "merge-plugin": {
-            "include": [
-                "html/modules/contrib/ckeditor_codemirror/composer.libraries.json"
-            ]
         }
     }
 }
